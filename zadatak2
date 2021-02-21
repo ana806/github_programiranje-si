@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+void funkcija2(int x, int y)
+{
+  int funkcija, counter;
+  counter=0;
+  for(int i=x;i<y+1;i++){
+    counter+=1;
+    funkcija=i*i+2*i-5;
+    cout<<"Rjesenje za ["<<counter<<"] gdje je vrijednost X["<<i<<"] je "<<funkcija<<endl;
+  }
+}
+
+int main()
+{
+  int x, y;
+
+  restart:
+  cout<<"Unesite pocetak opsega ";
+  cin>>x;
+  cout<<"Unesite kraj opsega ";
+  cin>>y;
+
+  if(x>y || x==y){
+    cout<<"Pocetak opsega ne moze biti manji od kraja opsega."<<endl;
+    cout<<" Molimo pokusajte ponovo"<<endl;
+    goto restart;
+
+  }
+  else{
+    funkcija2(x,y);
+  }
+
+
+return 0;
+}
